@@ -1,0 +1,51 @@
+body {
+  background: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/005/original/img.jpg?1656511485");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+}
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  padding-top: 1rem;
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  padding: 2rem 3rem;
+  margin-top: 3rem;
+}
+.container-header {
+  padding: 0 3rem;
+}
+
+.temperature-information {
+  padding: 1rem;
+}
+.forecast {
+  padding: 0 0 3rem 0;
+}
+.cards {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 0.5rem 0;
+}
+
+.temp-unit {
+  color: #000;
+  text-decoration: none;
+}
+.active {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  color: #000;
+}
+.coded-by {
+  padding-top: 2rem;
+}
