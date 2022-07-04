@@ -11,6 +11,9 @@ h1 {
   padding-top: 1rem;
   margin: 0;
 }
+h3 {
+  margin: 0;
+}
 p {
   margin: 0;
 }
@@ -31,11 +34,6 @@ p {
 }
 .forecast {
   padding: 0 0 3rem 0;
-}
-.cards {
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  padding: 0.5rem 0;
 }
 
 .temp-unit {
