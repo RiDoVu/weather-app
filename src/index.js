@@ -100,7 +100,7 @@ function displayForecast(response) {
             <img src=http://openweathermap.org/img/wn/${
               day.weather[0].icon
             }@2x.png alt="day.weather[0].description" width="70" />
-            <p>${Math.round(day.temp.day)} °C</p>
+            <p>${Math.round(day.temp.day)}°C</p>
         </div>
       </div>`;
     }
@@ -132,30 +132,6 @@ function getPosition(position) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-function showCelsius(event) {
-  event.preventDefault();
-  let temperatureInput = document.querySelector("#temperature");
-  let celsius = document.querySelector("#celsius");
-  let fahrenheit = document.querySelector("#fahrenheit");
-  temperatureInput.innerHTML = Math.round(
-    ((Number(temperatureInput.innerHTML) - 32) * 5) / 9
-  );
-  celsius.classList.add("active");
-  fahrenheit.classList.remove("active");
-}
-
-function showFahrenheit(event) {
-  event.preventDefault();
-  let temperatureInput = document.querySelector("#temperature");
-  let celsius = document.querySelector("#celsius");
-  let fahrenheit = document.querySelector("#fahrenheit");
-  temperatureInput.innerHTML = Math.round(
-    (Number(temperatureInput.innerHTML) * 9) / 5 + 32
-  );
-  celsius.classList.remove("active");
-  fahrenheit.classList.add("active");
-}
-
 let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
 searchCity("Vienna");
 
@@ -164,9 +140,3 @@ searchForm.addEventListener("submit", handleSubmit);
 
 let button = document.querySelector("#location-button");
 button.addEventListener("click", getPosition);
-
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", showCelsius);
-
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", showFahrenheit);

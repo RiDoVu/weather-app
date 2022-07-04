@@ -40,11 +40,6 @@ p {
   color: #000;
   text-decoration: none;
 }
-.active {
-  text-decoration: underline;
-  text-underline-offset: 0.2rem;
-  color: #000;
-}
 .coded-by {
   padding-top: 2rem;
 }
