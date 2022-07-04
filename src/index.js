@@ -67,6 +67,8 @@ function displayWeatherInformation(response) {
   //set date
   let newDate = new Date();
   formatDate(newDate);
+
+  displayForecast();
 }
 
 function searchCity(city) {
@@ -79,6 +81,27 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#search-input").value;
   searchCity(cityInput);
+}
+
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+
+  let forecastHTML = `<div class="row row-cols-1 row-cols-sm-3 row-cols-md-6">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col my-2 my-sm-2">
+        <div class="cards">
+            <h3>${day}</h3>
+            <i class="fa-solid fa-droplet"></i>
+            <p>18°C</p>
+        </div>
+      </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
 }
 
 function searchLocation(position) {
