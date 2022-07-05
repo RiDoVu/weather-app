@@ -54,12 +54,12 @@ function displayWeatherInformation(response) {
   let city = response.data.name;
   let temperature = Math.round(response.data.main.temp);
   let description = response.data.weather[0].description;
-  let wind = response.data.wind.speed;
-  let humidity = response.data.main.humidity;
+  let wind = Math.round(response.data.wind.speed);
+  let humidity = Math.round(response.data.main.humidity);
 
   //set response data
   document.querySelector("#city").innerHTML = city;
-  document.querySelector("#temperature").innerHTML = temperature;
+  document.querySelector("#temperature").innerHTML = temperature + `°C`;
   document.querySelector("#description").innerHTML = description;
   document.querySelector("#wind").innerHTML = wind;
   document.querySelector("#humidity").innerHTML = humidity;
@@ -95,12 +95,17 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `<div class="col my-2 my-sm-2">
-        <div class="cards">
-            <h3>${formatDay(day.dt)}</h3>
+          <div class="cards">
+            <h4>${formatDay(day.dt)}</h4>
             <img src=http://openweathermap.org/img/wn/${
               day.weather[0].icon
             }@2x.png alt="day.weather[0].description" width="70" />
-            <p>${Math.round(day.temp.day)}°C</p>
+            <p><span class="temp-max">${Math.round(
+              day.temp.max
+            )}°C</span><span class="temp-min">${Math.round(
+          day.temp.min
+        )}°C</span></p>
+            
         </div>
       </div>`;
     }
